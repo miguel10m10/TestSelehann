@@ -15,7 +15,7 @@ describe('Selehann Website', () => {
       return testData
     })
   })
-
+/*
   it('Send Contact Form Successful', () => {
 
     //Form values
@@ -109,7 +109,7 @@ describe('Selehann Website', () => {
     contactPage.btnSubmit().should('be.disabled')
 
   })
-
+*/
   it('Email format validation for contact form', () => {
 
     /*
@@ -127,14 +127,19 @@ describe('Selehann Website', () => {
         var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
         return re.test(email);
     }
-
+    contactPage.inputName().type(testData.name)
+    contactPage.inputLastname().type(testData.lastname)
     contactPage.inputEmail().type(testData.invalidEmail)
+    contactPage.inputMessage().type(testData.message)
+
     const EmailState = validateEmail(testData.invalidEmail)
 
     if(!EmailState){
-        contactPage.lblSent().should('be.visible')
-    }else{
+      cy.log('uno')
         contactPage.btnSubmit().should('be.disabled')
+    }else{
+      cy.log('dos')
+        contactPage.btnSubmit().should('not.be.disabled')
     }
 
   })
