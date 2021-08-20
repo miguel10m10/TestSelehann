@@ -135,10 +135,8 @@ describe('Selehann Website', () => {
     const EmailState = validateEmail(testData.invalidEmail)
 
     if(!EmailState){
-      cy.log('uno')
         contactPage.btnSubmit().should('be.disabled')
     }else{
-      cy.log('dos')
         contactPage.btnSubmit().should('not.be.disabled')
     }
 
