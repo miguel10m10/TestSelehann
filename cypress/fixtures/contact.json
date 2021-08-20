@@ -1,0 +1,7 @@
+{
+    "name": "Miguel",
+    "lastname": "Dalessio",
+    "email": "hello@cypress.io",
+    "message": "message",   
+    "invalidEmail": "p@@.com"   
+  }
